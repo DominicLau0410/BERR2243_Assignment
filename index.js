@@ -11,14 +11,14 @@ const app = express()
 app.use(express.json())
 
 // Connect to mongoDB
-const { connectToMongoDB} = require('./db');
+const { connectToMongoDB} = require('./src/db');
 connectToMongoDB();
 
 // Import routes modules
-const usersRoutes = require('./routes/users');
-const driversRoutes = require('./routes/drivers');
-const ridesRoutes = require('./routes/rides');
-const adminsRoutes = require('./routes/admins');
+const usersRoutes = require('./src/routes/users');
+const driversRoutes = require('./src/routes/drivers');
+const ridesRoutes = require('./src/routes/rides');
+const adminsRoutes = require('./src/routes/admins');
 
 // Register application routes
 app.use('/users', usersRoutes);
